@@ -1,0 +1,122 @@
+/* ---------- Simple modern light theme ---------- */
+:root{
+  --primary: #2b7cff;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --page-bg: #f4f7fb;
+  --ok: #16a34a;
+  --bad: #ef4444;
+  --shadow: 0 8px 24px rgba(39,62,88,0.08);
+  --radius: 12px;
+}
+
+body { margin:0; font-family: 'Segoe UI', system-ui, -apple-system, Arial; background: var(--page-bg); color: #0f172a; }
+
+/* Main container */
+.academics-container {
+  max-width: 1100px;
+  margin: 28px auto;
+  padding: 18px;
+}
+
+/* Header */
+.header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.header h1 { margin:0; font-size:22px; }
+.subtitle { margin:4px 0 0; color:var(--muted); font-size:13px; }
+
+/* controls */
+.controls { display:flex; gap:12px; align-items:center; }
+.tabs { display:flex; gap:8px; background:transparent; }
+.tab { border:1px solid transparent; padding:8px 12px; border-radius:10px; background:transparent; cursor:pointer; color:var(--muted); }
+.tab.active { background:linear-gradient(90deg,var(--primary),#6ea6ff); color:white; box-shadow: var(--shadow); border: 1px solid rgba(43,124,255,0.15); }
+.add-btn { background:var(--primary); color:white; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; box-shadow: var(--shadow); }
+
+/* summary */
+.summary { display:flex; gap:18px; margin-top:12px; color:var(--muted); font-size:14px; }
+
+/* section title */
+.section-title { margin:16px 0 10px; font-size:18px; color:#0b1220; }
+
+/* grid */
+.subject-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap:16px;
+}
+
+/* card */
+.subject-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding:14px;
+  box-shadow: var(--shadow);
+  border-top: 4px solid rgba(43,124,255,0.9);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+.subject-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(18,38,63,0.12); }
+
+.card-head { display:flex; justify-content:space-between; align-items:start; gap:10px; }
+.subject-title { margin:0; font-size:16px; }
+.muted { color:var(--muted); font-size:13px; margin-top:4px; }
+
+.card-body p { margin:4px 0; font-size:14px; color:#111827; }
+
+.status { padding:6px 10px; border-radius:999px; font-weight:700; font-size:12px; }
+.status.active { background:#e6ffed; color:var(--ok); border:1px solid rgba(16,185,129,0.12); }
+.status.inactive { background:#fff1f2; color:var(--bad); border:1px solid rgba(239,68,68,0.08); }
+
+/* actions */
+.card-actions { margin-top:auto; }
+.contact-btn {
+  display:inline-block;
+  width:100%;
+  text-align:center;
+  background:#25d366; color:#03280f; font-weight:700;
+  border:none; padding:10px 12px; border-radius:10px; cursor:pointer;
+}
+.contact-btn:hover { filter:brightness(.97); }
+
+/* empty state */
+.empty { color:var(--muted); padding:18px; background:#fff; border-radius:10px; }
+
+/* form overlay */
+.form-overlay {
+  position:fixed; inset:0; background: rgba(2,6,23,0.36); display:flex; align-items:center; justify-content:center; z-index:9999;
+}
+.form-container {
+  width: min(680px, 96%);
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 18px 60px rgba(2,6,23,0.18);
+  max-height: 92vh;
+  overflow:auto;
+}
+.form-container h2 { margin-top:0; }
+
+/* form layout */
+.label-row { display:grid; grid-template-columns: 140px 1fr; gap:12px; align-items:center; margin-bottom:10px; }
+.label-row span { color:var(--muted); }
+input, select { padding:10px 12px; border-radius:8px; border:1px solid #e6e9ef; width:100%; }
+.form-actions { display:flex; justify-content:flex-end; gap:8px; margin-top:8px; }
+.btn { padding:8px 12px; border-radius:8px; border:none; cursor:pointer; font-weight:700; }
+.btn.save { background: var(--primary); color:white; }
+.btn.cancel { background:#f3f4f6; color:#111827; }
+
+/* note */
+.note { color:var(--muted); font-size:13px; margin-top:8px; }
+
+/* responsive */
+@media (max-width: 680px) {
+  .label-row { grid-template-columns: 1fr; }
+  .controls { flex-direction: column; align-items:stretch; gap:8px; }
+  .summary { flex-direction:column; gap:6px; }
+}

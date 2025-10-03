@@ -1,0 +1,301 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* Container */
+.home-container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  /* height: 90vh; */
+  overflow: hidden;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background: #ff9800;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #e68900;
+}
+
+/* Section Styles */
+.section {
+  padding: 80px 8%;
+  width: 100%;
+}
+
+.bg-light-gray {
+  background: #f7f7f7;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.bg-blue-light {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+.bg-image {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+}
+
+.bg-vision {
+  background-image: url("https://images.unsplash.com/photo-1601758124513-cf2a61a5c2b3?w=1600&auto=format&fit=crop&q=80");
+}
+
+.bg-explore {
+  background-image: url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&auto=format&fit=crop&q=80");
+}
+
+.bg-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+.section-text {
+  flex: 1;
+}
+
+.section-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.section-text p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.section-img {
+  flex: 1;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+/* Info Grid */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.info-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/* Testimonials */
+.testimonial-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.testimonial {
+  background: #fff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.testimonial img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 10px;
+  color: #444;
+}
+
+/* Events */
+.events-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.event-item {
+  flex: 1;
+  min-width: 250px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.event-item:hover {
+  transform: scale(1.03);
+}
+
+.event-item img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.event-item p {
+  padding: 15px;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .section-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-img {
+    max-width: 100%;
+  }
+
+  .hero-overlay h1 {
+    font-size: 2.2rem;
+  }
+}
+/* Make section images always full width */
+.section-img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 0;   /* remove rounded corners */
+  box-shadow: none;   /* remove shadow to make it blend full width */
+  object-fit: cover;
+}
+
+/* For About, Admissions type sections: let image take half width in large screens */
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.section-content img.section-img {
+  flex: 1;
+  min-height: 350px;
+}
+
+/* Full width background showcase sections */
+.bg-image {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;   /* take big space */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* parallax-like effect */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-image .section-text {
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.bg-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55); /* dark overlay */
+}
